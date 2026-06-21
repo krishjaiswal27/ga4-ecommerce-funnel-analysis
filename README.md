@@ -20,8 +20,11 @@ Most public "funnel analysis" walkthroughs skip a real risk: a funnel built at t
 
 ### Skills:
 **BigQuery:** UNNEST on repeated/nested fields, CREATE TABLE AS, conditional aggregation, wildcard table queries
+
 **PostgreSQL:** CTEs, window functions, conditional aggregation, \copy data loading
+
 **Power BI:** DAX measures, funnel visualization, multi-page dashboard design, data modeling
+
 **Python:** Pandas, SciPy (chi-square testing), Matplotlib, writing reusable functions, funnel and revenue modeling
 
 ### Results & Business Recommendation:
