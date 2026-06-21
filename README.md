@@ -10,7 +10,7 @@ E-commerce teams often know their overall conversion rate but not where in the j
 ### Business Problem:
 Most public "funnel analysis" walkthroughs skip a real risk: a funnel built at the user-lifetime level can silently merge two unrelated visits into one fake conversion, making conversion look better (or worse) than it actually is and hiding where the real friction sits. I treated this project as a stakeholder question: where exactly are users falling out of the purchase journey, is that drop real or an artifact of how the funnel was measured, and which fix is worth prioritizing first based on revenue impact, not just which stage loses the most users?
 
-![funnel overview placeholder](<img width="1221" height="633" alt="Image" src="https://github.com/user-attachments/assets/052a684a-cf9e-42c3-a459-964918a37709" />)
+<img width="1221" height="633" alt="Image" src="https://github.com/user-attachments/assets/675e6813-0bed-4ccc-acab-1c418824f298" />
 
 ### Methodology:
 1. **BigQuery** — pulled and flattened 3+ months of raw GA4 event data, unnesting the nested `event_params` array to extract session IDs and build a session-scoped funnel table (one row per visit). This step specifically corrected a lifetime-vs-session conflation issue: an earlier user-level version of this funnel would have counted unrelated visits weeks apart as a single completed conversion.
@@ -29,8 +29,8 @@ The session-scoped rebuild changed the picture from an earlier, simpler version 
  
 The revenue model produced the clearest recommendation: a 5-point improvement in View → Cart conversion generates roughly **$92,000** more revenue over the analyzed period than the same 5-point improvement applied to the funnel's highest-volume stage (Session → View) — even though far fewer sessions pass through View → Cart. That's because the conversion rate from cart onward to purchase is high enough that gains there carry through to revenue much more efficiently than gains earlier in the funnel.
 
-![dashboard placeholder](docs/dashboard-screenshot.png)
- 
+<img width="790" height="490" alt="image" src="https://github.com/user-attachments/assets/457e7d95-bef6-47e2-8c04-0de0614d37de" />
+
 Based on this, I'd recommend:
 1. Prioritize product-page and add-to-cart UX over top-of-funnel acquisition spend — it's the stage with the best revenue return per point of improvement.
 2. Add cart-abandonment messaging (email/on-site) targeted at sessions that view a product but never add to cart.
